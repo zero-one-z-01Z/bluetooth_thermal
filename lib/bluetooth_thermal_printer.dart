@@ -43,6 +43,7 @@ class BluetoothThermalPrinter {
       result = await _channel.invokeMethod('connectPrinter', mac);
     } on PlatformException catch (e) {
       print("Failed to connect: '${e.message}'.");
+      return "Failed to connect: '${e.message}'.";
     }
     return result;
   }
